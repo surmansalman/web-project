@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Class</title>
+    <style>
+        .container{
+        width:100%;
+        }
+        #result{
+        text-align: center;
+        font-size: 18px;
+        font-weight: 700;
+        margin-top:50px;
+        }
+        .alignVideo{
+         text-align: center;
+         margin-top: 70px;
+        }
+        .alignButton{
+            float: right;
+            margin-top: -48px;
+        }
+        .ring-container {
+    position: relative;
+    top: -20px;
+}
+
+.circle {
+    width: 15px;
+    height: 15px;
+    background-color: #62bd19;
+    border-radius: 50%;
+    position: absolute;
+    top: 23px;
+    left: 23px;
+}
+
+.ringring {
+    border: 3px solid #62bd19;
+    -webkit-border-radius: 30px;
+    height: 25px;
+    width: 25px;
+    position: absolute;
+    left: 15px;
+    top: 15px;
+    -webkit-animation: pulsate 1s ease-out;
+    -webkit-animation-iteration-count: infinite;
+    opacity: 0.0
+}
+@-webkit-keyframes pulsate {
+    0% {-webkit-transform: scale(0.1, 0.1); opacity: 0.0;}
+    50% {opacity: 1.0;}
+    100% {-webkit-transform: scale(1.2, 1.2); opacity: 0.0;}
+}
+.alignSession{
+  width: 200px;
+    margin: 0 auto;
+}
+#logOut{
+background-color: #008CBA;
+    color: #fff;
+    border-radius: 10px;
+    cursor:pointer;
+}
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="alignSession">
+            <div class="ring-container">
+    <div class="ringring"></div>
+    <div class="circle"></div>
+</div>
+    <div id = "result"></div>
+             </div>
+        <div class="alignButton">
+        <form action = "home.html">
+    <input type="submit" value="Log Out Session" id="logOut">
+    </form>
+
+            </div>
+        <div class="alignVideo">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/jfY10pEKFEc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+
+         </div>
+<script>
+    document.getElementById("result").innerHTML=localStorage.getItem("textvalue");
+</script>
+</body>
+</html>
